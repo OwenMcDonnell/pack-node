@@ -5,7 +5,6 @@ $avvmRoot = 'c:\avvm\node'
 $node_versions = @(
     "22.18.0",
     "23.11.1",
-    "24.6.0"
 )
 
 foreach ($node_version in $node_versions) {
@@ -41,3 +40,6 @@ foreach ($node_version in $node_versions) {
     Write-Host "Packing $node_version x64"
     7z a "$avvmRoot\node-$node_version-x64.7z" "$avvmRoot\$node_version\x64\*"
 }
+Write-Host "Packing 24.6.0 x64"
+7z a "$avvmRoot\node-24.6.0.7z" "C:/Program Files/nodejs/node.exe" "$avvmRoot\$node_version\x64\*"
+ 
