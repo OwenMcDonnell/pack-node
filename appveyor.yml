@@ -1,0 +1,19 @@
+# This YAML instruct Appveyor to build and publish Docker container
+image: Visual Studio 2022
+
+environment:
+  APPVEYOR_BUILD_WORKER_IMAGE: vs2022-master
+  APPVEYOR_BUILD_WORKER_CLOUD: bakery-hyperv-host-20
+  APPVEYOR_RDP_PASSWORD:
+    secure: LrwIXcYylTtmEroMVPoDYQ==
+
+init: 
+- ps: $env:APPVEYOR_BUILD_WORKER_IMAGE
+- ps: $env:APPVEYOR_BUILD_WORKER_CLOUD
+
+build_script:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: ./scripts/Windows/avvm/pack-node.ps1
+
+artifacts:
+- path: 'c:\avvm\node\**\*.7z'
