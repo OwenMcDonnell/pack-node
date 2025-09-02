@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-$avvmRoot = 'c:\avvm\node'
+#$avvmRoot = 'c:\avvm\node'
 
 $node_versions = @(
     "22.18.0",
@@ -34,12 +34,12 @@ foreach ($node_version in $node_versions) {
 
     if (-not $node_version.StartsWith('18.0')) {
         Write-Host "Packing $node_version x86"
-        7z a "$avvmRoot\node-$node_version-x86.7z" "$avvmRoot\$node_version\x86\*"
+        7z a ".\avvm\node-$node_version-x86.7z" "$avvmRoot\$node_version\x86\*"
     }
 
     Write-Host "Packing $node_version x64"
-    7z a "$avvmRoot\node-$node_version-x64.7z" "$avvmRoot\$node_version\x64\*"
+    7z a ".\avvm\node-$node_version-x64.7z" "$avvmRoot\$node_version\x64\*"
 }
 Write-Host "Packing 24.6.0 x64"
-7z a "$avvmRoot\node-24.6.0.7z" "C:/Program Files/nodejs/node.exe" "$avvmRoot\$node_version\x64\*"
+7z a ".\avvm\node-24.6.0.7z" "C:/Program Files/nodejs/node.exe" "$avvmRoot\$node_version\x64\*"
  
