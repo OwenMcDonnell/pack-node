@@ -10,11 +10,10 @@ environment:
 init: 
 - ps: $env:APPVEYOR_BUILD_WORKER_IMAGE
 - ps: $env:APPVEYOR_BUILD_WORKER_CLOUD
-- ps: New-Item -Force -ItemType Directory -Path C:\avvm\node | Out-Null
 
 build_script:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - ps: ./scripts/Windows/avvm/pack-node.ps1
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: ./pack-node.ps1
 
 artifacts:
 - path: 'c:\avvm\node\**\*.7z'
