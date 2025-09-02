@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-#$avvmRoot = 'c:\avvm\node'
+$avvmRoot = 'c:\avvm\node'
 
 $node_versions = @(
     "22.18.0",
