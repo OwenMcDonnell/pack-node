@@ -11,7 +11,7 @@ $node_versions = @(
 foreach ($node_version in $node_versions) {
     $ver = [Version]$node_version
     $x86path = "$avvmRoot\$node_version\x86\nodejs\node.exe"
-    if ($ver -gt [Version]"22.0.0") {
+    if ($ver -lt [Version]"23.0.0") {
         if (Test-Path $x86path) {
             $x86 = $(& "$x86path" --version)
             if ($x86 -eq "v$node_version") { Write-Host "$node_version x86 good" -ForegroundColor Green } else { Write-Host "$node_version x86 wrong" -ForegroundColor Red }
