@@ -16,4 +16,4 @@ build_script:
   - ps: ./pack-node.ps1
 
 artifacts:
-- path: 'c:\avvm\node\**\*.7z'
+- path: 'avvm\*.7z'
