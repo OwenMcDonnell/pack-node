@@ -1,4 +1,4 @@
-# This YAML instruct Appveyor to build and publish Docker container
+
 image: Visual Studio 2022
 
 environment:
