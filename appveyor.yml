@@ -12,7 +12,7 @@ init:
 - ps: $env:APPVEYOR_BUILD_WORKER_CLOUD
 
 build_script:
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - ps: ./pack-node.ps1
 
 artifacts:
