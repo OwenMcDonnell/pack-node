@@ -4,7 +4,7 @@ $avvmRoot = 'c:\avvm\node'
 
 $node_versions = @(
     "22.21.1",
-    "24.11.0",
+    "24.11.0"
     #"25.1.0"
 )
 
