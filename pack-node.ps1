@@ -41,6 +41,6 @@ foreach ($node_version in $node_versions) {
     Write-Host "Packing $node_version x64"
     7z a ".\avvm\node-$node_version-x64.7z" "$avvmRoot\$node_version\x64\*"
 }
-Write-Host "Packing 25.1.0 x64"
-7z a ".\avvm\node-25.1.0-x64.7z" "C:/Program Files/nodejs" "$avvmRoot\25.1.0\x64\*"
+Write-Host "Packing 25.3.0 x64"
+7z a ".\avvm\node-25.3.0-x64.7z" "C:/Program Files/nodejs" "$avvmRoot\25.3.0\x64\*"
  
