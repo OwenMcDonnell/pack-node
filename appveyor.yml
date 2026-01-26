@@ -2,8 +2,8 @@
 image: Visual Studio 2022
 
 environment:
-  APPVEYOR_BUILD_WORKER_IMAGE: vs2022-master
-  APPVEYOR_BUILD_WORKER_CLOUD: bakery-hyperv-host-20
+  #APPVEYOR_BUILD_WORKER_IMAGE: vs2022-master
+  #APPVEYOR_BUILD_WORKER_CLOUD: bakery-hyperv-host-20
   APPVEYOR_RDP_PASSWORD:
     secure: 1lVxRwmJP09fHB+KIclXkw==
 
